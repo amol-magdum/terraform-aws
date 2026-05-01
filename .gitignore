@@ -1,0 +1,32 @@
+# Terraform working directory and plugins
+**/.terraform/*
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Sensitive variable files
+*.tfvars
+*.tfvars.json
+
+# CLI config files
+.terraformrc
+terraform.rc
+
+# Terraform plan outputs
+*.tfplan
+*.plan
+
+# Local override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Editor/OS noise
+.DS_Store
+Thumbs.db
