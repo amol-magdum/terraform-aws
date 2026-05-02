@@ -1,0 +1,11 @@
+Terraform-project
+-   main.tf
+-   variables.tf
+-   output.tf
+-   versions.tf
+-   providers.tf
+-   backend.tf
+-   terraform.tfvars
+-   terraform.tfvars.json
+-   .gitignore
+-   README.md   
