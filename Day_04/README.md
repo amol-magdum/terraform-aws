@@ -10,3 +10,39 @@ execute create_backend_S3.bat file first and use S3 name in terraform script
 # make sure to change backend S3 name in main.tf file
 
 # on terraform init - message shows initialising backend successfully
+
+# Backend Migration
+
+# Initialize with new backend configuration
+
+terraform init
+
+# Terraform will prompt to migrate existing state
+
+# Answer 'yes' to copy existing state to new backend
+
+# Verify state is now remote
+
+terraform state list
+
+State Commands
+
+# List resources in state
+
+terraform state list
+
+# Show detailed state information
+
+terraform state show <resource_name>
+
+# Remove resource from state (without destroying)
+
+terraform state rm <resource_name>
+
+# Move resource to different state address
+
+terraform state mv <source> <destination>
+
+# Pull current state and display
+
+terraform state pull
