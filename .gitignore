@@ -1,5 +1,6 @@
-# Terraform working directory and plugins
-**/.terraform/*
+# Terraform working directories and plugins (any subfolder)
+**/.terraform/
+**/.terraform/**
 
 # Terraform state files
 *.tfstate
@@ -30,3 +31,6 @@ override.tf.json
 # Editor/OS noise
 .DS_Store
 Thumbs.db
+
+# lock files
+*.lock.hcl

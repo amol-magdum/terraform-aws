@@ -39,7 +39,11 @@ $EncryptionConfig = @{
 } | ConvertTo-Json -Compress -Depth 5
 
 $TempEncryptionFile = Join-Path $env:TEMP ("terraform-s3-encryption-{0}.json" -f $BucketName)
-Set-Content -Path $TempEncryptionFile -Value $EncryptionConfig -Encoding utf8
+[System.IO.File]::WriteAllText(
+    $TempEncryptionFile,
+    $EncryptionConfig,
+    [System.Text.UTF8Encoding]::new($false)
+)
 Invoke-Aws -Arguments @("s3api", "put-bucket-encryption", "--bucket", $BucketName, "--server-side-encryption-configuration", "file://$TempEncryptionFile") | Out-Null
 Remove-Item -Path $TempEncryptionFile -ErrorAction SilentlyContinue
 
